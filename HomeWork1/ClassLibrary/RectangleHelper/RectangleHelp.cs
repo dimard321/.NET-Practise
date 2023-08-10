@@ -34,7 +34,28 @@ namespace RectangleHelper
 
             Console.WriteLine($" Периметр прямоугольника {result}");
         }
-        
-                         
+        static float ReadRectangle(string prompt)
+        {
+            float value;
+
+            bool validInput = false;
+
+            do
+            {
+                Console.Write(prompt);
+
+                validInput = float.TryParse(Console.ReadLine(), out value);
+
+                if (!validInput)
+                {
+                    Console.WriteLine("Некорректное значение. Пожалуйста, введите число и используйте запятую для десятичных чисел");
+                }
+
+            } while (!validInput);
+
+            return value;
+        }
+
+
     }
 }

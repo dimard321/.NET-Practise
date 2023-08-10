@@ -1,73 +1,20 @@
-﻿namespace ArrayHelper
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ArrayHelper
 {
-    public class ArrayHelp
+    public class OneDimensionalArray
     {
-        public int x { get; set; }
-        public int y { get; set; }
         public int lenght { get; set; }
 
-        public ArrayHelp(int y, int x)
-        {
-            this.x = x;
-
-            this.y = y;
-        }
-        public ArrayHelp(int lenght)
+        public OneDimensionalArray(int lenght)
         {
             this.lenght = lenght;
         }
 
-        public void SumElementsTwoDimensionalArray()
-        {
-
-            float[,] myArray = new float[y, x];
-
-            float counter = 0;
-
-            for (int i = 0; i < myArray.GetLength(0); i++)
-            {
-                for (int j = 0; j < myArray.GetLength(1); j++)
-                {
-
-                    float value;
-
-                    bool isValidInput = false;
-
-                    do
-                    {
-                        Console.Write($"Введите значение массива в точке {i},{j}: ");
-
-
-                        isValidInput = float.TryParse(Console.ReadLine(), out value);
-
-                        if (!isValidInput)
-                        {
-                            Console.WriteLine("Некорректное значение. Введите число.");
-                        }
-                    } while (!isValidInput);
-
-                    myArray[i, j] = value;
-
-                    if (myArray[i, j] >= 0)
-                    {
-                        counter += myArray[i, j];
-                    }
-                }
-            }
-
-            Console.WriteLine($"\tПолученный массив:");
-
-            for (int i = 0; i < myArray.GetLength(0); i++)
-            {
-                for (int j = 0; j < myArray.GetLength(1); j++)
-                {
-                    Console.Write($"{myArray[i, j]}\t");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine($"Сумма положительных элементов массива: {counter}");
-        }
-       
         public void OutputOneDimensionalArray()
         {
 
@@ -91,7 +38,7 @@
                     }
                 } while (!isValidInput);
 
-                 myArray[x] = value;
+                myArray[x] = value;
             }
 
             PrintOneDimensionalArray(myArray);
@@ -108,7 +55,7 @@
             }
             Console.WriteLine();
         }
-          
+
         public void OptionOneDimensionalArray(float[] arr)
         {
             Console.WriteLine("Введите номер операции:\n" +
@@ -126,7 +73,7 @@
                     break;
 
                 case 2:
-                   DESC(arr);
+                    DESC(arr);
                     break;
 
                 default:
@@ -143,7 +90,7 @@
         {
             float temp;
 
-            for (int i = 0; i < lenght-1; i++)
+            for (int i = 0; i < lenght - 1; i++)
             {
                 for (int x = 0; x < lenght - 1 - i; x++)
                 {
@@ -167,7 +114,7 @@
 
             for (int i = 0; i < lenght - 1; i++)
             {
-                for (int x = lenght-1; x > 0; x--)
+                for (int x = lenght - 1; x > 0; x--)
                 {
                     if (arr[x] < arr[x - 1])
                     {
@@ -185,3 +132,4 @@
         }
     }
 }
+

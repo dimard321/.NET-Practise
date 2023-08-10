@@ -34,6 +34,7 @@ namespace ClassLibrary
             Console.WriteLine("Введите длину и ширину прямоугольника");
 
             float height = ReadRectangle("Высота: ");
+
             float weight = ReadRectangle("Ширина: ");
 
             var rect1 = new RectangleHelp(height, weight);
@@ -43,7 +44,7 @@ namespace ClassLibrary
             rect1.FindPerimetr();
         }
 
-        static int ReadArray()
+        static int Review()
         {
             bool validInput = false;
 
@@ -68,11 +69,11 @@ namespace ClassLibrary
         {
             Console.WriteLine("Введите размерность двумерного массива");
 
-            int i = ReadArray();
+            int i = Review();
 
-            int j = ReadArray();
+            int j = Review();
 
-            var arr1 = new ArrayHelp(i, j);
+            var arr1 = new TwoDimensionalArray(i, j);
 
             arr1.SumElementsTwoDimensionalArray();
         }
@@ -81,9 +82,9 @@ namespace ClassLibrary
         {
             Console.WriteLine("Введите количество эл-ов одномерного массива");
 
-            int lenght = ReadArray();
+            int lenght = Review();
 
-            var arr1 = new ArrayHelp(lenght);
+            var arr1 = new OneDimensionalArray(lenght);
 
             arr1.OutputOneDimensionalArray();
   
@@ -96,7 +97,9 @@ namespace ClassLibrary
           "1. Одномерный массив\n" +
           "2. Двумерный массив\n");
 
-            int func = int.Parse(Console.ReadLine());
+            int func = Review();
+
+
             switch (func)
             {
                 case 1:
@@ -113,6 +116,8 @@ namespace ClassLibrary
 
                     Console.WriteLine("Введенно неверное значение");
 
+                    LaunchArray();
+
                     break;
             }
         }
@@ -125,7 +130,7 @@ namespace ClassLibrary
           "1. RectangleHelper\n" +
           "2. ArrayHelper\n");
 
-            int func = int.Parse(Console.ReadLine());
+            int func = Review();
 
             switch (func)
             {
@@ -142,6 +147,7 @@ namespace ClassLibrary
                 default:
 
                     Console.WriteLine("Введенно неверное значение");
+
                     Functional();
 
                     break;
