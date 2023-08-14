@@ -4,58 +4,35 @@ namespace RectangleHelper
 {
     public class RectangleHelp
     {
-        public float height { get; set; }
-        public float width { get; set; }
+        public float Height { get; set; }
+        public float Width { get; set; }
 
+        /// <summary>
+        /// Данный метод проверяет заданную размерность сторон прямоугольника на положительныее значения
+        /// </summary>
+        /// <param name="height"></param>
+        /// <param name="width"></param>
         public RectangleHelp(float height, float width)
         {
-            if (((width > 0) && (height > 0)))
-            {
-                this.height = height;
+             this.Height = height;
 
-                this.width = width;
-            }
-            else
-            {
-                Console.WriteLine("Некорректное значение. Данного прямоугольника не существует");
-            }
+             this.Width = width;
         }
 
+        /// <summary>
+        /// Данный метод вычисляет площадь прямоугольника
+        /// </summary>
         public void FindArea()
         {
-            float result = height * width;
-
-             Console.WriteLine($" Площадь прямоугольника {result}");
+             Console.WriteLine($" Площадь прямоугольника {Height * Width}");
         }
 
+        /// <summary>
+        /// Данный метод вычисляет периметр прямоугольника
+        /// </summary>
         public void FindPerimetr()
         {
-            float result = (height + width) * width;
-
-            Console.WriteLine($" Периметр прямоугольника {result}");
+            Console.WriteLine($" Периметр прямоугольника {(Height + Width) * Width}");
         }
-        static float ReadRectangle(string prompt)
-        {
-            float value;
-
-            bool validInput = false;
-
-            do
-            {
-                Console.Write(prompt);
-
-                validInput = float.TryParse(Console.ReadLine(), out value);
-
-                if (!validInput)
-                {
-                    Console.WriteLine("Некорректное значение. Пожалуйста, введите число и используйте запятую для десятичных чисел");
-                }
-
-            } while (!validInput);
-
-            return value;
-        }
-
-
     }
 }

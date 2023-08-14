@@ -2,21 +2,24 @@
 {
     public class TwoDimensionalArray
     {
-        public int x { get; set; }
-        public int y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
 
 
         public TwoDimensionalArray(int y, int x)
         {
-            this.x = x;
+            X = x;
 
-            this.y = y;
+            this.Y = y;
         }
 
+        /// <summary>
+        /// Данный метод суммирует все положительные элементы двумерного массива
+        /// </summary>
         public void SumElementsTwoDimensionalArray()
         {
 
-            float[,] myArray = new float[y, x];
+            float[,] myArray = new float[Y, X];
 
             float counter = 0;
 
@@ -40,7 +43,8 @@
                         {
                             Console.WriteLine("Некорректное значение. Введите число.");
                         }
-                    } while (!isValidInput);
+                    }
+                    while (!isValidInput);
 
                     myArray[i, j] = value;
 

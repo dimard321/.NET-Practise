@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 
 namespace ArrayHelper
 {
+    /// <summary>
+    /// Данный класс производит манипуляции с одномерным массивом 
+    /// </summary>
     public class OneDimensionalArray
     {
-        public int lenght { get; set; }
+        public int Lenght { get; set; }
 
         public OneDimensionalArray(int lenght)
         {
-            this.lenght = lenght;
+            this.Lenght = lenght;
         }
 
+        /// <summary>
+        /// Данный метод выполняет проверку на ввод иных символов помимо чисел
+        /// </summary>
         public void OutputOneDimensionalArray()
         {
+            float[] myArray = new float[Lenght];
 
-            float[] myArray = new float[lenght];
-
-            for (int x = 0; x < lenght; x++)
+            for (int x = 0; x < Lenght; x++)
             {
                 float value;
 
@@ -36,7 +41,8 @@ namespace ArrayHelper
                     {
                         Console.WriteLine("Некорректное значение. Введите число.");
                     }
-                } while (!isValidInput);
+                }
+                while (!isValidInput);
 
                 myArray[x] = value;
             }
@@ -45,17 +51,25 @@ namespace ArrayHelper
 
             OptionOneDimensionalArray(myArray);
         }
+        /// <summary>
+        /// Данный метод выводит одномерный массив на консоль
+        /// </summary>
+        /// <param name="arr"></param>
         public void PrintOneDimensionalArray(float[] arr)
         {
             Console.Write($" Полученный массив:\t");
 
-            for (int x = 0; x < lenght; x++)
+            for (var x = 0; x < Lenght; x++)
             {
                 Console.Write($" {arr[x]}\t");
             }
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Данный метод выводит на консоль варианты выполнения действий с одномерным массивом
+        /// </summary>
+        /// <param name="arr"></param>
         public void OptionOneDimensionalArray(float[] arr)
         {
             Console.WriteLine("Введите номер операции:\n" +
@@ -86,13 +100,17 @@ namespace ArrayHelper
             }
         }
 
+        /// <summary>
+        /// Данный метод выполняет сортировку ASC
+        /// </summary>
+        /// <param name="arr"></param>
         public void ASC(float[] arr)
         {
             float temp;
 
-            for (int i = 0; i < lenght - 1; i++)
+            for (int i = 0; i < Lenght - 1; i++)
             {
-                for (int x = 0; x < lenght - 1 - i; x++)
+                for (int x = 0; x < Lenght - 1 - i; x++)
                 {
                     if (arr[x] > arr[x + 1])
                     {
@@ -108,26 +126,30 @@ namespace ArrayHelper
 
             PrintOneDimensionalArray(arr);
         }
+
+        /// <summary>
+        ///  Данный метод выполняет сортировку DESC
+        /// </summary>
+        /// <param name="arr"></param>
         public void DESC(float[] arr)
         {
             float temp;
 
-            for (int i = 0; i < lenght - 1; i++)
+            for (int i = 0; i < Lenght - 1; i++)
             {
-                for (int x = lenght - 1; x > 0; x--)
+                for (int x = 0; x < Lenght - 1 - i; x++)
                 {
-                    if (arr[x] < arr[x - 1])
+                    if (arr[x] < arr[x + 1])
                     {
-                        temp = arr[x - 1];
+                        temp = arr[x + 1];
 
-                        arr[x - 1] = arr[x];
+                        arr[x + 1] = arr[x];
 
                         arr[x] = temp;
                     }
 
                 }
             }
-
             PrintOneDimensionalArray(arr);
         }
     }
