@@ -2,6 +2,9 @@
 
 namespace RectangleHelper
 {
+    /// <summary>
+    /// Данный класс выполняет различные действия с прямоугольником
+    /// </summary>
     public class RectangleHelp
     {
         public float Height { get; set; }
@@ -14,9 +17,9 @@ namespace RectangleHelper
         /// <param name="width"></param>
         public RectangleHelp(float height, float width)
         {
-             this.Height = height;
+             Height = height;
 
-             this.Width = width;
+             Width = width;
         }
 
         /// <summary>

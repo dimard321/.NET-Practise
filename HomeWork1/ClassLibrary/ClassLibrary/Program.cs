@@ -108,7 +108,9 @@ namespace ClassLibrary
   
         }
 
-
+        /// <summary>
+        /// Данный метод выводит на консоль варианты задавания массива
+        /// </summary>
         static void LaunchArray()
         {
             Console.WriteLine("Введите номер операции:\n" +
@@ -147,7 +149,9 @@ namespace ClassLibrary
         }
 
 
-
+        /// <summary>
+        /// Данный метод выводит на консоль варианты вызова классов
+        /// </summary>
         static void Functional()
         {
             Console.WriteLine("Введите номер операции:\n" +

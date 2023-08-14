@@ -1,5 +1,8 @@
 ﻿namespace ArrayHelper
 {
+    /// <summary>
+    ///  Данный класс выполняет различные действия с двумерным массивом
+    /// </summary>
     public class TwoDimensionalArray
     {
         public int X { get; set; }
@@ -10,7 +13,7 @@
         {
             X = x;
 
-            this.Y = y;
+            Y = y;
         }
 
         /// <summary>

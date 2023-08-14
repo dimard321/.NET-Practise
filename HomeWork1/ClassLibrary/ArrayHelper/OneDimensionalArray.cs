@@ -15,7 +15,7 @@ namespace ArrayHelper
 
         public OneDimensionalArray(int lenght)
         {
-            this.Lenght = lenght;
+            Lenght = lenght;
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace ArrayHelper
         /// </summary>
         public void OutputOneDimensionalArray()
         {
-            float[] myArray = new float[Lenght];
+            var myArray = new float[Lenght];
 
             for (int x = 0; x < Lenght; x++)
             {
