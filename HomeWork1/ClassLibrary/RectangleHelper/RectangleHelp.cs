@@ -7,14 +7,21 @@ namespace RectangleHelper
     /// </summary>
     public class RectangleHelp
     {
+        /// <summary>
+        /// получает длину прямоугольника
+        /// </summary>
         public float Height { get; set; }
+
+        /// <summary>
+        /// получает ширину прямоугольника
+        /// </summary>
         public float Width { get; set; }
 
         /// <summary>
         /// Данный метод проверяет заданную размерность сторон прямоугольника на положительныее значения
         /// </summary>
-        /// <param name="height"></param>
-        /// <param name="width"></param>
+        /// <param name="height">высота</param>
+        /// <param name="width">ширина</param>
         public RectangleHelp(float height, float width)
         {
              Height = height;
@@ -33,7 +40,7 @@ namespace RectangleHelper
         /// <summary>
         /// Данный метод вычисляет периметр прямоугольника
         /// </summary>
-        public void FindPerimetr()
+        public void FindPerimeter()
         {
             Console.WriteLine($" Периметр прямоугольника {(Height + Width) * Width}");
         }

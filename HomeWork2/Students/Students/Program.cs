@@ -6,7 +6,7 @@
         /// Заполняет словарь рандомным предметами для каждого студента
         /// </summary>
         /// <param name="array"></param>
-        /// <returns></returns>
+        /// <returns>название предмета</returns>
         static HashSet<string> GetRandomSubjects(string[] array)
         {
             var subjects = new HashSet<string>();
@@ -42,9 +42,9 @@
 
             var student3c1 = new Student("kolya.bobrov@mail.ru");
 
+            // словарь
             var studentSubjectDict = new Dictionary<Student, HashSet<string>>()
             {
-
                 [student1c1] = GetRandomSubjects(subjects),
 
                 [student2c1] = GetRandomSubjects(subjects),
@@ -56,9 +56,9 @@
                 [student2c2] = GetRandomSubjects(subjects),
 
                 [student3c2] = GetRandomSubjects(subjects)
-
             };
 
+            // вывод на консоль студентов и их предметов из словаря
             foreach (var item in studentSubjectDict)
             {
                 Console.WriteLine($"Имя студента: {item.Key.FullName}");

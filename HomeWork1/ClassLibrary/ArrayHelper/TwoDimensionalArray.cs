@@ -1,14 +1,27 @@
-﻿namespace ArrayHelper
+﻿using System.Diagnostics.Metrics;
+
+namespace ArrayHelper
 {
     /// <summary>
     ///  Данный класс выполняет различные действия с двумерным массивом
     /// </summary>
     public class TwoDimensionalArray
     {
+        /// <summary>
+        /// получает размер двумерного массива по координате Х
+        /// </summary>
         public int X { get; set; }
+
+        /// <summary>
+        /// получает размер двумерного массива по координате Y
+        /// </summary>
         public int Y { get; set; }
 
-
+        /// <summary>
+        /// Инициализирует размерность массива
+        /// </summary>
+        /// <param name="y">координата у</param>
+        /// <param name="x">координата х</param>
         public TwoDimensionalArray(int y, int x)
         {
             X = x;
@@ -21,24 +34,21 @@
         /// </summary>
         public void SumElementsTwoDimensionalArray()
         {
-
-            float[,] myArray = new float[Y, X];
+            var myArray = new float[Y, X];
 
             float counter = 0;
 
-            for (int i = 0; i < myArray.GetLength(0); i++)
+            for (var i = 0; i < myArray.GetLength(0); i++)
             {
-                for (int j = 0; j < myArray.GetLength(1); j++)
+                for (var j = 0; j < myArray.GetLength(1); j++)
                 {
-
                     float value;
 
-                    bool isValidInput = false;
+                    var isValidInput = false;
 
                     do
                     {
                         Console.Write($"Введите значение массива в точке {i},{j}: ");
-
 
                         isValidInput = float.TryParse(Console.ReadLine(), out value);
 
@@ -58,18 +68,28 @@
                 }
             }
 
+            Console.WriteLine($"Сумма положительных элементов массива: {counter}");
+
+            PrintElementsTwoDimensionalArray(myArray);
+        }
+
+        /// <summary>
+        /// Выводит двумерный массив на консоль
+        /// </summary>
+        /// <param name="myArray">передается двумерный массив</param>
+        public void PrintElementsTwoDimensionalArray(float[,] myArray)
+        {
             Console.WriteLine($"\tПолученный массив:");
 
-            for (int i = 0; i < myArray.GetLength(0); i++)
+            for (var i = 0; i < myArray.GetLength(0); i++)
             {
-                for (int j = 0; j < myArray.GetLength(1); j++)
+                for (var j = 0; j < myArray.GetLength(1); j++)
                 {
                     Console.Write($"{myArray[i, j]}\t");
                 }
+
                 Console.WriteLine();
             }
-            Console.WriteLine($"Сумма положительных элементов массива: {counter}");
         }
-
     }
 }

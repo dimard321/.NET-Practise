@@ -1,7 +1,5 @@
 ﻿using ArrayHelper;
 using RectangleHelper;
-using System;
-using System.ComponentModel;
 
 namespace ClassLibrary
 {
@@ -10,13 +8,13 @@ namespace ClassLibrary
         /// <summary>
         ///  Данный метод выполняет проерку на ввод  положительного числового значения
         /// </summary>
-        /// <param name="prompt"></param>
-        /// <returns></returns>
+        /// <param name="prompt">подсказка</param>
+        /// <returns>корректное значние</returns>
         static float ReadRectangle(string prompt)
         {
             float value;
 
-            bool validInput = false;
+            var validInput = false;
 
             do
             {
@@ -41,24 +39,24 @@ namespace ClassLibrary
         {
             Console.WriteLine("Введите длину и ширину прямоугольника");
 
-            float height = ReadRectangle("Высота: ");
+            var height = ReadRectangle("Дина: ");
 
-            float weight = ReadRectangle("Ширина: ");
+            var weight = ReadRectangle("Ширина: ");
 
             var rect1 = new RectangleHelp(height, weight);
 
             rect1.FindArea();
 
-            rect1.FindPerimetr();
+            rect1.FindPerimeter();
         }
 
         /// <summary>
         ///  Данный метод выполняет проерку на ввод целочисленного значения
         /// </summary>
-        /// <returns></returns>
-        static int Review()
+        /// <returns>корректное значение</returns>
+        static int Validate()
         {
-            bool validInput = false;
+            var validInput = false;
 
             int i;
 
@@ -74,9 +72,8 @@ namespace ClassLibrary
             while (!validInput);
 
             return i;
-
-           
         }
+
         /// <summary>
         /// Данный метод позволяет задать размерность и вызвать методы выполняющие операции с двумерным массиво
         /// </summary>
@@ -84,9 +81,9 @@ namespace ClassLibrary
         {
             Console.WriteLine("Введите размерность двумерного массива");
 
-            int i = Review();
+            int i = Validate();
 
-            int j = Review();
+            int j = Validate();
 
             var arr1 = new TwoDimensionalArray(i, j);
 
@@ -100,12 +97,11 @@ namespace ClassLibrary
         {
             Console.WriteLine("Введите количество эл-ов одномерного массива");
 
-            int lenght = Review();
+            var lenght = Validate();
 
             var arr1 = new OneDimensionalArray(lenght);
 
             arr1.OutputOneDimensionalArray();
-  
         }
 
         /// <summary>
@@ -118,8 +114,7 @@ namespace ClassLibrary
           "2. Двумерный массив\n" +
           "3. Вернуться назад\n");
 
-            int func = Review();
-
+            int func = Validate();
 
             switch (func)
             {
@@ -158,20 +153,20 @@ namespace ClassLibrary
           "1. RectangleHelper\n" +
           "2. ArrayHelper\n");
 
-            int func = Review();
+            var func = (FunctionalMenu) Validate();
 
             switch (func)
             {
-                case 1:
+                case FunctionalMenu.RectangleHelper:
                     LaunchRectangle();
 
                     break;
 
-                case 2:
+                case FunctionalMenu.ArrayHelper:
                     LaunchArray();
 
                     break;
-        
+
                 default:
 
                     Console.WriteLine("Введенно неверное значение");
@@ -187,5 +182,12 @@ namespace ClassLibrary
             Functional();
         }
 
+
+        enum FunctionalMenu
+        {
+            RectangleHelper = 1,
+
+            ArrayHelper
+        }
     }
 }

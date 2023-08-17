@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ArrayHelper
 {
     /// <summary>
@@ -11,8 +6,15 @@ namespace ArrayHelper
     /// </summary>
     public class OneDimensionalArray
     {
+        /// <summary>
+        /// принимает длину массива
+        /// </summary>
         public int Lenght { get; set; }
 
+        /// <summary>
+        /// получает длину массива
+        /// </summary>
+        /// <param name="lenght">длина массива</param>
         public OneDimensionalArray(int lenght)
         {
             Lenght = lenght;
@@ -25,11 +27,11 @@ namespace ArrayHelper
         {
             var myArray = new float[Lenght];
 
-            for (int x = 0; x < Lenght; x++)
+            for (var x = 0; x < Lenght; x++)
             {
                 float value;
 
-                bool isValidInput = false;
+                var isValidInput = false;
 
                 do
                 {
@@ -54,7 +56,7 @@ namespace ArrayHelper
         /// <summary>
         /// Данный метод выводит одномерный массив на консоль
         /// </summary>
-        /// <param name="arr"></param>
+        /// <param name="arr">одномерный массив</param>
         public void PrintOneDimensionalArray(float[] arr)
         {
             Console.Write($" Полученный массив:\t");
@@ -69,25 +71,26 @@ namespace ArrayHelper
         /// <summary>
         /// Данный метод выводит на консоль варианты выполнения действий с одномерным массивом
         /// </summary>
-        /// <param name="arr"></param>
+        /// <param name="arr">одномерный массив</param>
         public void OptionOneDimensionalArray(float[] arr)
         {
             Console.WriteLine("Введите номер операции:\n" +
-         "1. ASC\n" +
-         "2. DESC\n");
+                "1. ASC\n" +
+                "2. DESC\n");
 
-            int func = int.Parse(Console.ReadLine());
+            var func = int.Parse(Console.ReadLine());
 
             switch (func)
             {
-                case 1:
+                case (int)OneDimensionalArrayMenu.ASCSort:
 
-                    ASC(arr);
+                    SortArrayASC(arr);
 
                     break;
 
                 case 2:
-                    DESC(arr);
+                    SortArrayDESC(arr);
+
                     break;
 
                 default:
@@ -103,24 +106,17 @@ namespace ArrayHelper
         /// <summary>
         /// Данный метод выполняет сортировку ASC
         /// </summary>
-        /// <param name="arr"></param>
-        public void ASC(float[] arr)
+        /// <param name="arr">одномерный массив</param>
+        public void SortArrayASC(float[] arr)
         {
-            float temp;
-
-            for (int i = 0; i < Lenght - 1; i++)
+            for (var i = 0; i < Lenght - 1; i++)
             {
-                for (int x = 0; x < Lenght - 1 - i; x++)
+                for (var x = 0; x < Lenght - 1 - i; x++)
                 {
                     if (arr[x] > arr[x + 1])
                     {
-                        temp = arr[x + 1];
-
-                        arr[x + 1] = arr[x];
-
-                        arr[x] = temp;
+                        (arr[x + 1], arr[x]) = (arr[x], arr[x + 1]);
                     }
-
                 }
             }
 
@@ -130,26 +126,20 @@ namespace ArrayHelper
         /// <summary>
         ///  Данный метод выполняет сортировку DESC
         /// </summary>
-        /// <param name="arr"></param>
-        public void DESC(float[] arr)
+        /// <param name="arr">одномерный массив</param>
+        public void SortArrayDESC(float[] arr)
         {
-            float temp;
-
-            for (int i = 0; i < Lenght - 1; i++)
+            for (var i = 0; i < Lenght - 1; i++)
             {
-                for (int x = 0; x < Lenght - 1 - i; x++)
+                for (var x = 0; x < Lenght - 1 - i; x++)
                 {
                     if (arr[x] < arr[x + 1])
                     {
-                        temp = arr[x + 1];
-
-                        arr[x + 1] = arr[x];
-
-                        arr[x] = temp;
+                        (arr[x + 1], arr[x]) = (arr[x], arr[x + 1]);
                     }
-
                 }
             }
+
             PrintOneDimensionalArray(arr);
         }
     }
