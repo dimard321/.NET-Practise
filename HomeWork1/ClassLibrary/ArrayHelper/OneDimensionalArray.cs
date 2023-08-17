@@ -78,17 +78,18 @@ namespace ArrayHelper
                 "1. ASC\n" +
                 "2. DESC\n");
 
-            var func = int.Parse(Console.ReadLine());
+            var func = (OneDimensionalArrayMenu)int.Parse(Console.ReadLine());
 
             switch (func)
             {
-                case (int)OneDimensionalArrayMenu.ASCSort:
+                case OneDimensionalArrayMenu.ASCSort:
 
                     SortArrayASC(arr);
 
                     break;
 
-                case 2:
+                case OneDimensionalArrayMenu.DESCSort:
+
                     SortArrayDESC(arr);
 
                     break;

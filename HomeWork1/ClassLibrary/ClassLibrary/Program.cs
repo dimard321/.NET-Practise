@@ -110,25 +110,28 @@ namespace ClassLibrary
         static void LaunchArray()
         {
             Console.WriteLine("Введите номер операции:\n" +
-          "1. Одномерный массив\n" +
-          "2. Двумерный массив\n" +
-          "3. Вернуться назад\n");
+                "1. Одномерный массив\n" +
+                "2. Двумерный массив\n" +
+                "3. Вернуться назад\n");
 
-            int func = Validate();
+            var func = (LaunchArrayMenu)Validate();
 
             switch (func)
             {
-                case 1:
+                case LaunchArrayMenu.OneDimensionalArray:
+
                     LaunchOneDimensionalArray();
 
                     break;
 
-                case 2:
+                case LaunchArrayMenu.TwoDimensionalArray:
+
                     LaunchTwoDimensionalArray();
 
                     break;
 
-                case 3:
+                case LaunchArrayMenu.ComeBack:
+
                     Functional();
 
                     break;
@@ -150,19 +153,21 @@ namespace ClassLibrary
         static void Functional()
         {
             Console.WriteLine("Введите номер операции:\n" +
-          "1. RectangleHelper\n" +
-          "2. ArrayHelper\n");
+                "1. RectangleHelper\n" +
+                "2. ArrayHelper\n");
 
             var func = (FunctionalMenu) Validate();
 
             switch (func)
             {
                 case FunctionalMenu.RectangleHelper:
+
                     LaunchRectangle();
 
                     break;
 
                 case FunctionalMenu.ArrayHelper:
+
                     LaunchArray();
 
                     break;
@@ -180,14 +185,6 @@ namespace ClassLibrary
         static void Main(string[] args)
         {
             Functional();
-        }
-
-
-        enum FunctionalMenu
-        {
-            RectangleHelper = 1,
-
-            ArrayHelper
         }
     }
 }
