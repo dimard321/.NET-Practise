@@ -22,7 +22,7 @@ namespace Students
         /// <summary>
         /// Конструктор класса Student, который принимает email и возвращает полное имя
         /// </summary>
-        /// <param name="email"></param>
+        /// <param name="email">почта</param>
         public Student(string email)
         {
             Email = email;
@@ -33,8 +33,8 @@ namespace Students
         /// <summary>
         /// Конструктор класса Student, который принимает имя и фамилию, а возвращает email и полное имя
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="surname"></param>
+        /// <param name="name">имя</param>
+        /// <param name="surname">фамилия</param>
         public Student(string name, string surname) 
         {
             FullName = name + " " + surname;
@@ -69,7 +69,7 @@ namespace Students
         /// <summary>
         /// Извлечение полного имени из email
         /// </summary>
-        /// <param name="email"></param>
+        /// <param name="email">почта</param>
         /// <returns>полное имя</returns>
         public string ConvertToFullName(string Email)
         {
@@ -115,8 +115,8 @@ namespace Students
         /// <summary>
         /// Переобразует полное имя в почту
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="surname"></param>
+        /// <param name="name"> имя</param>
+        /// <param name="surname">фамилия</param>
         /// <returns>почту</returns>
         public string ConvertToEmail(string name, string surname)
         {

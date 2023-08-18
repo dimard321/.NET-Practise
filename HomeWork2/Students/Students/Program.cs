@@ -5,7 +5,7 @@
         /// <summary>
         /// Заполняет словарь рандомным предметами для каждого студента
         /// </summary>
-        /// <param name="array"></param>
+        /// <param name="array">массив</param>
         /// <returns>название предмета</returns>
         static HashSet<string> GetRandomSubjects(string[] array)
         {

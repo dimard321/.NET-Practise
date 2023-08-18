@@ -8,9 +8,13 @@ namespace Perfomance
     public class C : IComparable<C>
     {
         public int i;
+        /// <summary>
+        /// Сравнивает объекты на основе значения i
+        /// </summary>
+        /// <param name="other">значения</param>
+        /// <returns>значения</returns>
         public int CompareTo(C other)
         {
-            // Сравниваем объекты на основе значения i
             return i.CompareTo(other.i);
         }
     }
@@ -21,9 +25,13 @@ namespace Perfomance
     public struct S : IComparable<S>
     {
         public int i;
+        /// <summary>
+        /// Сравнивает объекты на основе значения i
+        /// </summary>
+        /// <param name="other">значения</param>
+        /// <returns>значения</returns>
         public int CompareTo(S other)
         {
-            // Сравниваем объекты на основе значения i
             return i.CompareTo(other.i);
         }
     }
@@ -102,7 +110,7 @@ namespace Perfomance
 
             timeStruct.Stop();
 
-            Console.WriteLine($"Время сортировки структуры: {timeClass.Elapsed}");
+            Console.WriteLine($"Время сортировки структуры: {timeStruct.Elapsed}");
         }
 
     }
