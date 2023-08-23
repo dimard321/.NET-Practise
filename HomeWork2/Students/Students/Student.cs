@@ -71,45 +71,36 @@ namespace Students
         /// </summary>
         /// <param name="email">почта</param>
         /// <returns>полное имя</returns>
-        public string ConvertToFullName(string Email)
+        public string ConvertToFullName(string email)
         {
            //извлечение имени из почты
-   
-            char dot = '.';
+            var indexOfDot = email.IndexOf('.');
 
-            char at = '@';
+            var firstName = email[..indexOfDot]; // с первого элемента до индекса
 
-            int indexOfDot = Email.IndexOf(dot);
+            var tempFirstName = firstName.ToUpper();
 
-            string firstName = Email.Substring(0, indexOfDot);
+            tempFirstName = tempFirstName[..1];
 
-            string tempFirstName = firstName.ToUpper();
-
-            tempFirstName = tempFirstName.Substring(0, 1);
-
-            firstName = firstName.Substring(1);
+            firstName = firstName[1..];
 
             firstName = tempFirstName + firstName;
 
             // извлечение фамилии из почты
 
-            string newEmail = Email.Substring(indexOfDot + 1);
+            var newEmail = email[(indexOfDot + 1)..];
 
-            int indexOfDotTwo = newEmail.IndexOf(dot);
+            var lastName = email.Substring(indexOfDot + 1, newEmail.IndexOf('@'));
 
-            int indexOfAt = newEmail.IndexOf(at);
+            var tempLastName = lastName.ToUpper();
 
-            string lastName = Email.Substring(indexOfDot + 1, indexOfAt);
+            tempLastName = tempLastName[..1];
 
-            string tempLastName = lastName.ToUpper();
-
-            tempLastName = tempLastName.Substring(0, 1);
-
-            lastName = lastName.Substring(1);
+            lastName = lastName[1..];
 
             lastName = tempLastName + lastName;
 
-            return FullName = firstName + " " + lastName;
+            return $"{firstName} {lastName}";
         }
 
         /// <summary>
