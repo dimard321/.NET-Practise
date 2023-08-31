@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace StringExamples
 {
+    /// <summary>
+    ///  Класс разворачивает все слова во входной строке
+    /// </summary>
     public class RewerseToString
     {
+        /// <summary>
+        /// Разворачивает все слова во входной строке
+        /// </summary>
+        /// <param name="inputString">входная строка</param>
+        /// <returns>строку с развернутыми словами</returns>
         public static string ReverseWords(string inputString)
         {
-            string[] words = inputString.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            var words = inputString.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             var newString = string.Empty;
 
-            for (int i = 0; i < words.Length; i++)
+            for (var i = 0; i < words.Length; i++)
             {
                 newString = words[i] + " " + newString;
             }

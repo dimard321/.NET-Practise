@@ -7,15 +7,23 @@ using System.Threading.Tasks;
 
 namespace StringExamples
 {
+    /// <summary>
+    /// Класс для парсинга телефонных номеров
+    /// </summary>
     public class TelephoneNumbers
     {
+        /// <summary>
+        /// Метод для парсинга телефонных номеров
+        /// </summary>
+        /// <param name="inputString">входная строка</param>
+        /// <returns>телефонные номера</returns>
         public static List<string> GetTelephoneNumbers(string inputString)
         {
             var phoneNumbers = new List<string>();
 
-            Regex regex = new Regex(@"\+?\d{1,3}\s?\(?\d{2,3}\)?\s\d{3}-\d{2,3}-?(\d{2})?");
+            var regex = new Regex(@"\+?\d{1,3}\s?\(?\d{2,3}\)?\s\d{3}-\d{2,3}-?(\d{2})?");
 
-            MatchCollection matches = regex.Matches(inputString);
+            var matches = regex.Matches(inputString);
 
             if (matches.Count > 0)
             {

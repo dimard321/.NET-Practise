@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace StringExamples
+﻿namespace StringExamples
 {
     internal class Program
     {
@@ -10,13 +8,14 @@ namespace StringExamples
                 "1. Cредняя длина слова во входной строке\n" +
                 "2. Удваивание символов\n" +
                 "3. Сумма двух больших чисел\n" +
-                "4. Развернуть все слова во входной строке");
+                "4. Развернуть все слова во входной строке\n" +
+                "5. Считать номера телефонов из файла\n");
 
-            var function = int.Parse(Console.ReadLine());
+            var function = (LaunchStringMenu)int.Parse(Console.ReadLine());
 
             switch (function)
             {
-                case 1:
+                case LaunchStringMenu.AverageLength:
 
                     Console.WriteLine("Введите строку");
 
@@ -26,7 +25,7 @@ namespace StringExamples
 
                     break;
 
-                case 2:
+                case LaunchStringMenu.DoublingCharacters:
 
                     Console.WriteLine("Введите две строки");
 
@@ -38,7 +37,8 @@ namespace StringExamples
 
                     break;
 
-                case 3:
+                case LaunchStringMenu.SumOfNumbers:
+
                     Console.WriteLine("Введите две строки");
 
                     oneInputString = Console.ReadLine();
@@ -49,7 +49,7 @@ namespace StringExamples
 
                     break;
 
-                case 4:
+                case LaunchStringMenu.ExpandOfWords:
 
                     Console.WriteLine("Введите строку");
 
@@ -59,7 +59,7 @@ namespace StringExamples
 
                     break;
 
-                case 5:
+                case LaunchStringMenu.ReadPhoneNumbers:
 
                     var inputTextPath = "Files/Text.txt";
 
