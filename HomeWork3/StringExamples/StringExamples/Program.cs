@@ -21,7 +21,7 @@
 
                     var inputString = Console.ReadLine();
 
-                    Console.WriteLine(AverageWordLenght.GetAverageWordLenght(inputString));
+                    Console.WriteLine(AverageWordLength.GetAverageWordLength(inputString));
 
                     break;
 
@@ -86,7 +86,7 @@
 
         static void Main(string[] args)
         {
-            StringMenu();
+            StringMenu();            
         }
     }
 }

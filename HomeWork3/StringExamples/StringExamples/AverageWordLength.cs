@@ -9,14 +9,14 @@ namespace StringExamples
     /// <summary>
     /// Класс для расчета средней длины слова во входной строке
     /// </summary>
-    public class AverageWordLenght
+    public class AverageWordLength
     {
         /// <summary>
         /// Расчет средней длины слова во входной строке
         /// </summary>
         /// <param name="inputString">входящая строка</param>
         /// <returns>средняя длина слов</returns>
-        public static double GetAverageWordLenght(string inputString)
+        public static double GetAverageWordLength(string inputString)
         {
            var words = inputString.Split(' ');
 
