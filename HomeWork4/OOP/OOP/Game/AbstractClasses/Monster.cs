@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OOP.Game.Intefraces;
 
-namespace OOP.Game
+namespace OOP.Game.AbstractClasses
 {
     /// <summary>
     /// Абстрактный базовый класс для монстров в игре.
@@ -66,40 +62,6 @@ namespace OOP.Game
             {
                 Console.WriteLine($"{GetType().Name} не может атаковать {target.GetType().Name}, так как это не человек.");
             }
-        }
-    }
-
-    /// <summary>
-    /// Класс, представляющий монстра - волка.
-    /// </summary>
-    class Wolf : Monster
-    {
-        /// <summary>
-        /// Конструктор для создания экземпляра волка с заданными характеристиками.
-        /// </summary>
-        /// <param name="hp">Здоровье волка.</param>
-        /// <param name="attack">Сила атаки волка.</param>
-        /// <param name="speed">Скорость волка.</param>
-        public Wolf(int hp, int attack, int speed) : base(hp, attack, speed)
-        {
-
-        }
-    }
-
-    /// <summary>
-    /// Класс, представляющий монстра - медведя.
-    /// </summary>
-    class Bear : Monster
-    {
-        /// <summary>
-        /// Конструктор для создания экземпляра медведя с заданными характеристиками.
-        /// </summary>
-        /// <param name="hp">Здоровье медведя.</param>
-        /// <param name="attack">Сила атаки медведя.</param>
-        /// <param name="speed">Скорость медведя.</param>
-        public Bear(int hp, int attack, int speed) : base(hp, attack, speed)
-        {
-
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using OOP.Figures;
 using OOP.Game;
-using System.Security.Cryptography;
 
 namespace OOP
 {
@@ -32,12 +31,9 @@ namespace OOP
 
             Console.WriteLine($"Периметр квадрата равен {square.Perimeter()}\n\n");
 
+            var player = new GameImitation();
 
-            var player = new PlayGames();
-
-            player.Play();
-           
-
+            player.PlayGame();
         }
     }
 }

@@ -1,54 +1,18 @@
-﻿namespace OOP.Game
+﻿using OOP.Game.AbstractClasses;
+using OOP.Game.GameElements;
+using Human = OOP.Game.AbstractClasses.Human;
+
+namespace OOP.Game
 {
-    /// <summary>
-    /// Интерфейс для игровых элементов.
-    /// </summary>
-    public interface IGameElement
-    {
-        /// <summary>
-        /// Получает или задает координату X элемента.
-        /// </summary>
-        public int X { get; set; }
-
-        /// <summary>
-        /// Получает или задает координату Y элемента.
-        /// </summary>
-        public int Y { get; set; }
-    }
-
-    /// <summary>
-    /// Интерфейс для живых существ в игре.
-    /// </summary>
-    public interface IAliveElement
-    {
-        /// <summary>
-        /// Получает или задает текущее количество здоровья существа.
-        /// </summary>
-        public int HP { get; set; }
-
-        /// <summary>
-        /// Выполняет движение существа по указанным координатам.
-        /// </summary>
-        /// <param name="x">Координата X для перемещения.</param>
-        /// <param name="y">Координата Y для перемещения.</param>
-        public void Move(int x, int y, int x1, int y1);
-
-        /// <summary>
-        /// Выполняет атаку другого живого существа.
-        /// </summary>
-        /// <param name="target">Цель атаки.</param>
-        public void MakeAttack(IAliveElement target);
-    }
-
     /// <summary>
     /// Класс, представляющий игровой процесс.
     /// </summary>
-    public class PlayGames
+    public class GameImitation
     {
         /// <summary>
         /// Метод для запуска игры.
         /// </summary>
-        public void Play()
+        public void PlayGame()
         {
             var human = new Human(10, 5, 1);
 
