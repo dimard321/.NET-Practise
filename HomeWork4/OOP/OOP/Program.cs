@@ -1,4 +1,6 @@
 ﻿using OOP.Figures;
+using OOP.Game;
+using System.Security.Cryptography;
 
 namespace OOP
 {
@@ -28,7 +30,14 @@ namespace OOP
 
             Console.WriteLine($"Площадь квадрата равна {square.Area()}");
 
-            Console.WriteLine($"Периметр квадрата равен {square.Perimeter()}");
+            Console.WriteLine($"Периметр квадрата равен {square.Perimeter()}\n\n");
+
+
+            var player = new PlayGames();
+
+            player.Play();
+           
+
         }
     }
 }
