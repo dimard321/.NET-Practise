@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{8FC20E27-BA48-418C-97EA-5A98B202C8D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringConverterLibrary", "ConvertStringToInt\StringConverterLibrary.csproj", "{CEACEF05-BEEE-478E-A69E-9723FF406608}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FC20E27-BA48-418C-97EA-5A98B202C8D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC20E27-BA48-418C-97EA-5A98B202C8D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC20E27-BA48-418C-97EA-5A98B202C8D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC20E27-BA48-418C-97EA-5A98B202C8D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEACEF05-BEEE-478E-A69E-9723FF406608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEACEF05-BEEE-478E-A69E-9723FF406608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEACEF05-BEEE-478E-A69E-9723FF406608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEACEF05-BEEE-478E-A69E-9723FF406608}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2ABE8DA0-A57D-46E9-B107-35BCB783890C}
+	EndGlobalSection
+EndGlobal
