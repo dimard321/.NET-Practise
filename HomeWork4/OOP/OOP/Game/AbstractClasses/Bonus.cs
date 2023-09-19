@@ -21,7 +21,7 @@ namespace OOP.Game.AbstractClasses
             }
             else
             {
-                throw new ArgumentOutOfRangeException("Введенное значение для бонуса не может быть меньше 1");
+                throw new ArgumentOutOfRangeException(null, null, message: "Введенное значение для бонуса не может быть меньше 1");
             }
            
         }

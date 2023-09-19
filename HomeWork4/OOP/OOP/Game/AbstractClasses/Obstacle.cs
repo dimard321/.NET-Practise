@@ -21,7 +21,7 @@ namespace OOP.Game.AbstractClasses
             }
             else
             {
-                throw new ArgumentOutOfRangeException("Значение урона от препятствия не может быть меньше 1");
+                throw new ArgumentOutOfRangeException(null, null, message: "Значение урона от препятствия не может быть меньше 1");
             } 
         }
 

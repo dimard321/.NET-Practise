@@ -42,11 +42,9 @@ namespace OOP.Game.AbstractClasses
         /// <summary>
         /// Метод для перемещения персонажа по указанным координатам.
         /// </summary>
-        /// <param name="x">Координата X для перемещения.</param>
-        /// <param name="y">Координата Y для перемещения.</param>
         /// <param name="x1">Координата X, в которую персонаж перемещается.</param>
         /// <param name="y1">Координата Y, в которую персонаж перемещается.</param>
-        public virtual void Move(int x, int y, int x1, int y1)
+        public virtual void Move(int x1, int y1)
         {
             X = x1;
 

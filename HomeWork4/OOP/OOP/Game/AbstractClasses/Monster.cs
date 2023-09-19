@@ -26,7 +26,7 @@ namespace OOP.Game.AbstractClasses
             }
             else
             {
-                throw new ArgumentOutOfRangeException("Характеристики монстра не могут быть меньше 1");
+                throw new ArgumentOutOfRangeException(null, null, message: "Характеристики монстра не могут быть меньше 1");
             }
         }
 
@@ -43,11 +43,9 @@ namespace OOP.Game.AbstractClasses
         /// <summary>
         /// Выполняет перемещение монстра по указанным координатам.
         /// </summary>
-        /// <param name="x">Текущая координата X монстра.</param>
-        /// <param name="y">Текущая координата Y монстра.</param>
         /// <param name="x1">Новая координата X для перемещения.</param>
         /// <param name="y1">Новая координата Y для перемещения.</param>
-        public virtual void Move(int x, int y, int x1, int y1)
+        public virtual void Move(int x1, int y1)
         {
             X = x1;
 
