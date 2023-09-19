@@ -3,15 +3,27 @@ using System.Text.RegularExpressions;
 
 namespace StringConverterLibrary
 {
+    /// <summary>
+    /// Класс для преобразования строк в целые числа и их валидации.
+    /// </summary>
     public class StringConverter
     {
         private readonly ILogger _logger;
 
+        /// <summary>
+        /// Конструктор класса StringConverter.
+        /// </summary>
+        /// <param name="logger">Объект для логирования.</param>
         public StringConverter(ILogger logger)
         {
             _logger = logger;
         }
 
+        /// <summary>
+        /// Метод для преобразования строки в целое число.
+        /// </summary>
+        /// <param name="inputStrings">Входная строка.</param>
+        /// <returns>Преобразованное целое число.</returns>
         public int ConvertToInt(string inputStrings)
         {
             _logger.Info("Началась конвертация");
@@ -57,6 +69,11 @@ namespace StringConverterLibrary
             }
         }
 
+        /// <summary>
+        /// Метод для валидации строки.
+        /// </summary>
+        /// <param name="inputString">Входная строка.</param>
+        /// <returns>True, если строка является целым числом, в противном случае - False.</returns>
         public bool Validate(string inputString)
         {
             _logger.Info("Валидация строки");
