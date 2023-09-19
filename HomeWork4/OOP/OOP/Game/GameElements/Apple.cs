@@ -22,7 +22,14 @@ namespace OOP.Game.GameElements
         /// <param name="person">Персонаж, который получает бонус.</param>
         public override void SetBonus(Person person)
         {
-            person.Attack += BonusValue;
+            if(BonusValue > 0)
+            {
+                person.Attack += BonusValue;
+            }
+            else
+            {
+                throw new ArgumentException($"Значения бонуса не может быть отрицательным");
+            }
         }
     }
 }

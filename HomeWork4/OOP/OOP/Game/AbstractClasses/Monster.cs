@@ -1,4 +1,5 @@
-﻿using OOP.Game.Intefraces;
+﻿using OOP.Game.GameElements;
+using OOP.Game.Intefraces;
 
 namespace OOP.Game.AbstractClasses
 {
@@ -15,11 +16,18 @@ namespace OOP.Game.AbstractClasses
         /// <param name="speed">Скорость монстра.</param>
         protected Monster(int hp, int attack, int speed)
         {
-            HP = hp;
+            if (hp > 0 && attack > 0 && speed > 0)
+            {
+                HP = hp;
 
-            Attack = attack;
+                Attack = attack;
 
-            Speed = speed;
+                Speed = speed;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Характеристики монстра не могут быть меньше 1");
+            }
         }
 
         public int X { get; set; }

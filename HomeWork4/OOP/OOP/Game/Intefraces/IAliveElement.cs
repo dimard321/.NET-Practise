@@ -25,7 +25,7 @@
         /// </summary>
         /// <param name="x">Координата X для перемещения.</param>
         /// <param name="y">Координата Y для перемещения.</param>
-        public void Move(int x, int y, int x1, int y1);
+        public void Move(int x1, int y1);
 
         /// <summary>
         /// Выполняет атаку другого живого существа.

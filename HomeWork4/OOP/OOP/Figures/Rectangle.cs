@@ -14,41 +14,51 @@ namespace OOP.Figures
         /// <summary>
         /// Приватное поле для хранения длины первой стороны прямоугольника.
         /// </summary>
-        private double a { get; init; }
+        private double Length { get; init; }
 
         /// <summary>
         /// Приватное поле для хранения длины второй стороны прямоугольника.
         /// </summary>
-        private double b { get; init; }
+        private double Width { get; init; }
 
         /// <summary>
         /// Конструктор класса Rectangle, принимающий длины двух сторон прямоугольника и инициализирующий поля.
         /// </summary>
-        /// <param name="a">Длина первой стороны.</param>
-        /// <param name="b">Длина второй стороны.</param>
-        public Rectangle(double a, double b)
+        /// <param name="length">Длина первой стороны.</param>
+        /// <param name="width">Длина второй стороны.</param>
+        public Rectangle(double length, double width)
         {
-            this.a = a;
+            Length = length;
 
-            this.b = b;
+            Width = width;
         }
 
-        /// <summary>
-        /// Метод для вычисления площади прямоугольника.
-        /// </summary>
-        /// <returns>Площадь прямоугольника.</returns>
+        ///<inheritdoc/>
         public double Area()
         {
-            return a * b;
+            if(Length > 0 && Width>0) 
+            {
+
+                return Length * Width;
+            }
+            else
+            {
+                throw new IOException("Введите величину, больше 0");
+            }
         }
 
-        /// <summary>
-        /// Метод для вычисления периметра прямоугольника.
-        /// </summary>
-        /// <returns>Периметр прямоугольника.</returns>
+        ///<inheritdoc/>
         public double Perimeter()
         {
-            return (a + b) * 2;
+            if (Length > 0 && Width > 0)
+            {
+                return (Length + Width) * 2;
+            }
+            else
+            {
+                throw new IOException("Введите величину, больше 0");
+            }
+
         }
     }
 }

@@ -11,7 +11,7 @@ namespace OOP.Game.GameElements
     /// <summary>
     /// Класс, представляющий препятствие - камень.
     /// </summary>
-    class Stone : Obstacle, IObstacle
+    class Stone : Obstacle
     {
         /// <summary>
         /// Конструктор для создания экземпляра камня

@@ -31,9 +31,15 @@ namespace OOP
 
             Console.WriteLine($"Периметр квадрата равен {square.Perimeter()}\n\n");
 
-            var player = new GameImitation();
-
-            player.PlayGame();
+            var gameImitation = new GameImitation();
+            try
+            {
+                gameImitation.PlayGame();
+            }
+            catch(ArgumentOutOfRangeException ex)
+            {
+               Console.WriteLine(ex.Message);
+            }
         }
     }
 }

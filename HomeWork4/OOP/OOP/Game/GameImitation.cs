@@ -1,6 +1,5 @@
 ﻿using OOP.Game.AbstractClasses;
 using OOP.Game.GameElements;
-using Human = OOP.Game.AbstractClasses.Human;
 
 namespace OOP.Game
 {
@@ -36,7 +35,7 @@ namespace OOP.Game
 
             for (var i = 0; i < trees.Length; i++)
             {
-                trees[i] = new Tree(random.Next(1, 10));
+                trees[i] = new Tree(random.Next(0, 10));
             }
 
             for (var i = 0; i < stones.Length; i++)

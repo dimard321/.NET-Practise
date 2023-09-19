@@ -14,17 +14,17 @@ namespace OOP.Figures
         /// <summary>
         /// Приватное поле для хранения длины первой стороны треугольника.
         /// </summary>
-        private double a { get; init; }
+        private double A { get; init; }
 
         /// <summary>
         /// Приватное поле для хранения длины второй стороны треугольника.
         /// </summary>
-        private double b { get; init; }
+        private double B { get; init; }
 
         /// <summary>
         /// Приватное поле для хранения длины третьей стороны треугольника.
         /// </summary>
-        private double c { get; init; }
+        private double C { get; init; }
 
         /// <summary>
         /// Конструктор класса Triangle, принимающий длины трех сторон треугольника и инициализирующий поля.
@@ -34,35 +34,34 @@ namespace OOP.Figures
         /// <param name="c">Длина третьей стороны.</param>
         public Triangle(double a, double b, double c)
         {
-            this.a = a;
+            A = a;
 
-            this.b = b;
+            B = b;
 
-            this.c = c;
+            C = c;
         }
 
-        /// <summary>
-        /// Метод для вычисления площади треугольника.
-        /// </summary>
-        /// <returns>Площадь треугольника.</returns>
+        ///<inheritdoc/>
         public double Area()
         {
-            var P = Perimeter();
+            var perimeter = Perimeter();
 
-            var p = P / 2;
+            var halfMeter = perimeter / 2;
 
-            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            return Math.Sqrt(halfMeter * (halfMeter - A) * (halfMeter - B) * (halfMeter - C));
         }
 
-        /// <summary>
-        /// Метод для вычисления периметра треугольника.
-        /// </summary>
-        /// <returns>Периметр треугольника.</returns>
+        ///<inheritdoc/>
         public double Perimeter()
         {
-            var P = a + b + c;
-
-            return P;
+            if (A > 0 && B > 0 && C > 0)
+            {
+                return A + B + C;
+            }
+            else
+            {
+                throw new IOException("Введите величину, больше 0");
+            }
         }
     }
 }

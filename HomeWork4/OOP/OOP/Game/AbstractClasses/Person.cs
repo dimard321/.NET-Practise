@@ -25,11 +25,18 @@ namespace OOP.Game.AbstractClasses
         /// <param name="speed">Скорость человека.</param>
         public Person(int hp, int attack, int speed)
         {
-            HP = hp;
+            if (hp > 0 && attack > 0 && speed > 0)
+            {
+                HP = hp;
 
-            Attack = attack;
+                Attack = attack;
 
-            Speed = speed;
+                Speed = speed;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException(null, null, message: "Характеристики персонажа не могут быть меньше 1") ;
+            }
         }
 
         /// <summary>

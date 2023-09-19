@@ -15,7 +15,15 @@ namespace OOP.Game.AbstractClasses
 
         protected Bonus(int bonusValue)
         {
-            BonusValue = bonusValue;
+            if (bonusValue > 0)
+            {
+                BonusValue = bonusValue;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Введенное значение для бонуса не может быть меньше 1");
+            }
+           
         }
 
         /// <summary>

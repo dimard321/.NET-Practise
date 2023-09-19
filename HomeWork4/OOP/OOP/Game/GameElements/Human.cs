@@ -1,9 +1,4 @@
 ﻿using OOP.Game.AbstractClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP.Game.GameElements
 {
@@ -24,7 +19,7 @@ namespace OOP.Game.GameElements
 
         public override void Move(int x, int y, int x1, int y1)
         {
-            Console.WriteLine($"Человек переместился в координаты X:{x}, Y:{y}.");
+            Console.WriteLine($"Человек переместился в координаты X:{x1}, Y:{y1}.");
 
             base.Move(x, y, x1, y1);
         }

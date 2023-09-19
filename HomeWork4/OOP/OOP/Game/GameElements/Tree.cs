@@ -11,7 +11,7 @@ namespace OOP.Game.GameElements
     /// <summary>
     /// Класс, представляющий препятствие - дерево.
     /// </summary>
-    class Tree : Obstacle, IObstacle
+    class Tree : Obstacle
     {
         /// <summary>
         /// Конструктор для создания экземпляра дерева.

@@ -20,7 +20,7 @@ namespace OOP.Game.GameElements
 
         public override void Move(int x, int y, int x1, int y1)
         {
-            Console.WriteLine($"Эльф переместился в координаты X:{x}, Y:{y}.");
+            Console.WriteLine($"Эльф переместился в координаты X:{x1}, Y:{y1}.");
 
             base.Move(x, y, x1, y1);
         }

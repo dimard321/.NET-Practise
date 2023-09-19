@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOP.Figures
+﻿namespace OOP.Figures
 {
     /// <summary>
     /// Класс для квадрата.
@@ -14,33 +8,41 @@ namespace OOP.Figures
         /// <summary>
         /// Приватное поле для хранения длины стороны квадрата.
         /// </summary>
-        private double a { get; init; }
+        private double Length { get; init; }
 
         /// <summary>
         /// Конструктор класса Square, принимающий длину стороны квадрата и инициализирующий поле.
         /// </summary>
-        /// <param name="a">Длина стороны квадрата.</param>
-        public Square(double a)
+        /// <param name="length">Длина стороны квадрата.</param>
+        public Square(double length)
         {
-            this.a = a;
+            this.Length = length;
         }
 
-        /// <summary>
-        /// Метод для вычисления площади квадрата.
-        /// </summary>
-        /// <returns>Площадь квадрата.</returns>
+        ///<inheritdoc/>
         public double Area()
         {
-            return a * a;
+            if (Length > 0)
+            {
+                return Length * Length;
+            }
+            else
+            {
+                throw new IOException("Введите величину, больше 0");
+            }
         }
 
-        /// <summary>
-        /// Метод для вычисления периметра квадрата.
-        /// </summary>
-        /// <returns>Периметр квадрата.</returns>
+        ///<inheritdoc/>
         public double Perimeter()
         {
-            return a * 4;
+            if (Length > 0)
+            {
+                return Length * 4;
+            }
+            else
+            {
+                throw new IOException("Введите величину, больше 0");
+            }
         }
     }
 }

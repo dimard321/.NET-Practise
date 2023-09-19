@@ -15,7 +15,14 @@ namespace OOP.Game.AbstractClasses
 
         public Obstacle(int healthDamage)
         {
-            HealthDamage = healthDamage;
+            if (healthDamage > 0)
+            {
+                HealthDamage = healthDamage;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Значение урона от препятствия не может быть меньше 1");
+            } 
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace OOP.Figures
         /// <summary>
         /// Приватное поле для хранения радиуса круга.
         /// </summary>
-        private double radius { get; init; }
+        private double Radius { get; init; }
 
         /// <summary>
         /// Конструктор класса Circle, принимающий радиус и инициализирующий поле.
@@ -22,25 +22,35 @@ namespace OOP.Figures
         /// <param name="radius">Радиус круга.</param>
         public Circle(double radius)
         {
-            this.radius = radius;
+            Radius = radius;
         }
 
-        /// <summary>
-        /// Метод для вычисления площади круга.
-        /// </summary>
-        /// <returns>Площадь круга.</returns>
+        ///<inheritdoc/>
         public double Area()
         {
-            return Math.PI * radius * radius;
+            if (Radius > 0)
+            {
+                return Math.PI * Radius * Radius;
+            }
+            else
+            {
+                throw new IOException("Введите величину, больше 0");
+            }
+           
         }
 
-        /// <summary>
-        /// Метод для вычисления периметра круга.
-        /// </summary>
-        /// <returns>Периметр круга.</returns>
+        ///<inheritdoc/>
         public double Perimeter()
         {
-            return Math.PI * radius * 2;
+            if(Radius > 0)
+            {
+                return Math.PI * Radius * 2;
+            }
+            else
+            {
+                throw new IOException("Введите величину, больше 0");
+            }
+            
         }
     }
 }
