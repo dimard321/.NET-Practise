@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace HomeWork7
 {
+    /// <summary>
+    /// Вспомогательный класс для работы с матрицами.
+    /// </summary>
     public static class MatrixHelper
     {
+        /// <summary>
+        /// Метод для вывода матрицы в консоль.
+        /// </summary>
+        /// <param name="matrix">Матрица, который нужно вывести.</param>
         public static void PrintMatrix(int[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
