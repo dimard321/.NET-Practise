@@ -1,2 +1,2 @@
 # MariaHW
-Repository for home works
+Repository for .NET
