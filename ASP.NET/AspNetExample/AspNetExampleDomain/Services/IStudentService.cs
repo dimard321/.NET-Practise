@@ -10,8 +10,8 @@ namespace AspNetExampleDomain.Services
 
         Task UpdateStudentAsync(UpdateStudentRequest updateStudentRequest);
 
-        Task<Student> GetSudentAsync(Guid id);
+        Task<Student> GetStudentAsync(Guid id);
 
-        Task<Student[]> GetStudentsAsync();
+        Task<IEnumerable<GetStudentResponse>> GetStudentsAsync();
     }
 }

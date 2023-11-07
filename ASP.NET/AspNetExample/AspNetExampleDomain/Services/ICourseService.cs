@@ -9,6 +9,6 @@ namespace AspNetExampleDomain.Services
 {
     public interface ICourseService
     {
-        Task CreateCourseAsync(CreateCourseModel createCourseModel);
+        Task CreateCourseAsync(CreateCourseRequest createCourseModel);
     }
 }

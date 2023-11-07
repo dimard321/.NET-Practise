@@ -29,12 +29,21 @@ namespace AspNetExampleBusinesLayer.Services
             await _studentRepository.CreateStudentAsync(studentEntity);
         }
 
-        public async Task<Student[]> GetStudentsAsync()
+        public async Task<IEnumerable<GetStudentResponse>> GetStudentsAsync()
         {
-            return await _studentRepository.GetStudentsSAsync();
+            var studentsEntities = await _studentRepository.GetStudentsSAsync();
+
+            return studentsEntities.Select(s => new GetStudentResponse
+            {
+                Id = s.Id,
+                Name = s.Name,
+                Surname = s.Surname,
+                Age = s.Age,
+                Gender = s.Gender
+            });
         }
 
-        public async Task<Student> GetSudentAsync(Guid id)
+        public async Task<Student> GetStudentAsync(Guid id)
         {
             return await _studentRepository.GetStudentAsync(id);
         }
