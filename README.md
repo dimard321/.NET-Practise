@@ -1,2 +1,1 @@
-# MariaHW
 Repository for .NET
