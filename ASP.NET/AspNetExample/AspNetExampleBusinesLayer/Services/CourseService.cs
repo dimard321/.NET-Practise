@@ -14,7 +14,7 @@ namespace AspNetExampleBusinesLayer.Services
             _courseRepository = courseRepository;
         }
 
-        public async Task CreateCourseAsync(CreateCourseModel createCourseModel)
+        public async Task CreateCourseAsync(CreateCourseRequest createCourseModel)
         {
             var course = new Course
             {

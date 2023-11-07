@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AspNetExampleDomain.Models.Course
 {
-    public class CreateCourseModel
+    public class CreateCourseRequest
     {
         public string Name { get; set; }
 

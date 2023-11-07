@@ -38,16 +38,16 @@ namespace AspNetExample.WebApi.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<Student>> GetSudent(Guid id)
+        public async Task<ActionResult<GetStudentResponse>> GetSudent(Guid id)
         {
-            var students = await _studentService.GetSudentAsync(id);
+            var students = await _studentService.GetStudentAsync(id);
 
             return Ok(students);
         }
 
         [HttpGet("all")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<Student[]>> GetSudents()
+        public async Task<ActionResult<GetStudentResponse[]>> GetSudents()
         {
            var students = await _studentService.GetStudentsAsync();
 

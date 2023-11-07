@@ -17,7 +17,7 @@ namespace AspNetExample.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCourse([FromBody] CreateCourseModel createCourseModel)
+        public async Task<IActionResult> CreateCourse([FromBody] CreateCourseRequest createCourseModel)
         {
             await _courseService.CreateCourseAsync(createCourseModel);
 
